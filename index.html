@@ -261,7 +261,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="carga()">
     <nav id="header" class="menubar">
         <ul>
             <li><a id="link-clase" href="#clase" onclick="cambiar(this)">Información Autor</a></li>
@@ -413,13 +413,15 @@
     </footer>
 </body>
 <script>
+    function carga(){
+        document.getElementById("btn_principal5").click();
+    }
+
     document.getElementById("link-inicio").style.color = "whitesmoke";
     document.getElementById("link-inicio").style.backgroundColor = "gray";
     var cont=1;
     var pag;
     var sum;
-
-    document.getElementById("btn_principal1").click();
 
     document.addEventListener('keyup', event => {
       if (event.keyCode === 40) {
