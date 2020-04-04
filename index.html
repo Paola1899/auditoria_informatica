@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://image.flaticon.com/icons/png/512/1802/1802806.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap" rel="stylesheet">
+    <title>Auditoria</title>
+    <style>
+        /*Blog*/
+        body{
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menubar ul {
+            list-style-type: none;
+            overflow: auto;
+            background-color: transparent;
+            margin-right: 5%;
+        }
+        
+        .menubar li {
+            float: right;
+            width: 140px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .menubar li a {
+            display: block;
+            color: gray;
+            text-align: center;
+            padding: 3px 3px;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        .menubar a:hover {
+            background-color: gray;
+            color: whitesmoke;
+        }
+
+        .contenido h1 {
+            position: relative;
+            color: black;
+            text-align: center;
+            font-size: 350%;
+            font-family: 'Play', sans-serif;
+            margin-left: -50%;
+        }
+
+        .contenido img {
+            width: 60%;
+            float: right;
+            margin-top: -10%;
+        }
+
+        .contenido h2 {
+            text-align: center;
+            margin-left: 3%;
+            margin-top: -1%;
+        }
+
+        .contenido p {
+            text-align: left;
+            margin-left: 4%;
+        }
+
+        .contenido button {
+            background-color: rgb(82, 81, 81);
+            border-radius: 60px;
+            border-color: transparent;
+            margin-left: 14%;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+
+        .contenido button:hover {
+            background-color: olive;
+            padding: 12px 22px;
+            -webkit-box-shadow: 6px 6px 7px 0px rgba(0,0,0,0.39);
+            -moz-box-shadow: 6px 6px 7px 0px rgba(0,0,0,0.39);
+            box-shadow: 6px 6px 7px 0px rgba(0,0,0,0.39);
+        }
+
+        .contenido button a {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        /*Desplazamiento*/
+        .panel{
+            min-width: 100%;
+            height: 90.6%;
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            margin-top: -180%;
+            position: absolute;
+            box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
+            z-index: 2;
+            -webkit-transition: all .8s ease-in-out;
+            -moz-transition: all .8s ease-in-out;
+            -o-transition: all .8s ease-in-out;
+            transition: all .8s ease-in-out;
+        }
+        .panel:target{
+            margin-top: -1%;
+        }
+
+        /*Contacto*/
+        .contacto ul {
+            list-style-type: none;
+            overflow: auto;
+            background-color: transparent;
+            margin-right: 5%;
+        }
+
+        .contacto li {
+            display: inline;
+            margin-left: 2%;
+        }
+
+        .contacto li a, .contacto p  {
+            color: black;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .contacto li a:hover {
+            color: gray;
+        }
+
+        .contacto{
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .contacto img {
+            width: 250px;
+        }
+
+        /*Botones*/
+        .volver, .avanzar {
+            float: right;
+            background-color: whitesmoke;
+            -webkit-box-shadow: 10px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px rgba(0,0,0,0.75);
+            box-shadow: 10px rgba(0,0,0,0.75);
+            border-radius: 50px;
+            margin: 0;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            margin-right: 30px;
+            margin-top: -50px;
+        }
+
+        .volver:hover, .avanzar:hover {
+            width: 60px;
+            height: 60px;
+        }
+        
+        /*Informacion*/
+        .contenido2 img{
+            float: left;
+            width: 650px;
+            margin-top: 2%;
+            margin-left: -2%;
+        }
+
+        .contenido2 h2{
+            text-align: center;
+            margin-top: 2%;
+        }
+
+        .contenido2 p {
+            margin-right: 2%;
+        }
+
+        .contenido2 ul li {
+            position: relative;
+            left: 8%;
+        }
+
+        .contenido2 h3 {
+            text-align: center;
+        }
+        /*Caracteristicas*/
+        .contenido3 img{
+            float: right;
+            width: 700px;
+            margin-top: 2%;
+        }
+
+        .contenido3 h2 {
+            text-align: center;
+        }
+
+        .contenido3 p {
+            margin-left: 1%;
+        }
+
+        .contenido3 ol {
+            margin-left: 3%;
+        }
+        /*Perfil*/
+        .contenido4 img{
+            float: left;
+            width: 550px;
+            margin-top: 1%;
+        }
+
+        .contenido4 h2{
+            text-align: center;
+        }
+
+        .contenido4 p{
+            margin-right: 100px;
+        }
+
+        .contenido4 ul{
+            margin-left: 600px;
+        }
+
+        .contenido4 ul li ul{
+            margin-left: 10px;
+            margin-right: 80px;
+        }
+
+        @media screen and (max-width: 740px){
+            .contenido h1{
+                font-size: 200%;
+                text-align: center;
+                margin: auto;
+            }
+
+            .contenido img, .contenido2 img, .contenido3 img, .contenido4 img {
+                float: none;
+                margin-left: 25%;
+                width: 50%;
+                margin-top: 2%;
+            }
+
+            .contenido button {
+                margin-left: 40%;
+            }
+
+            .contenido4 ul{
+                margin: 0;
+            }
+
+            .contenido4 p{
+                margin-right: 0.5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="header" class="menubar">
+        <ul>
+            <li><a id="link-clase" href="#clase" onclick="cambiar(this)">Información Autor</a></li>
+            <li><a id="link-perfil" href="#perfil" onclick="cambiar(this)">Perfil Auditor</a></li>
+            <li><a id="link-caracteristicas" href="#caracteristicas" onclick="cambiar(this)">Fases</a></li>
+            <li><a id="link-info" href="#info" onclick="cambiar(this)">Información</a></li>
+            <li><a id="link-inicio" href="#inicio" onclick="cambiar(this)">Blog</a></li>
+        </ul>
+    </nav>
+    <!--Blog-->
+    <header id="inicio" class="panel contenido">
+        <h1>Auditoria Informatica</h1>
+        <img src="https://infora.ro/wp-content/uploads/2020/01/Audit-Gratuit.png" alt="">
+        <h2>¿Que es una Auditoria?</h2>
+        <p>
+            Una auditoria es un examen o investigación critica y sistematica de la dirección interna, estados y 
+            operaciones contables, documentos jurídicos y financieros, etc; con el fin de verificar si las operaciones 
+            dentro de la organización se ajustan a lo fijado por las leyes o los buenos criterios.
+        </p>
+        <p>
+            Generalmente una auditoria se reliza por objetivos como mejorar o sujerir mejoras en la empresa, reunir 
+            elementos para la toma de descisiones, reducir riesgo, retroalimentarse, optimizar recursos y analizar las 
+            funciones imparcialmente. Asi tambien suelen dividir una auditoria dependiendo de factores como quien la realiza 
+            sea interno o externo a la organización, por el resultado que se desea obtener, por su periodo o frecuencia y 
+            por su alcance ya sea selectiva o exhaustiva en las áreas donde se realizo.
+        </p>
+        <button><a href="#info" id="btn_principal1" onclick="cambio1()"><span>Continuar </span><i class="fas fa-sort-down"></i></a></button>
+    </header>
+    <!--Información-->
+    <article id="info" class="panel contenido2">
+        <img src="https://cdn.dribbble.com/users/878428/screenshots/4168512/illustration.jpg" alt="">
+        <h2>Auditoria Informatica</h2>
+        <p>
+            Hoy en día los sistemas informáticos se han vuelto piezas fundamentales en el desarrollo del día a día de las 
+            empresas. Por este motivo es de vital importancia que se lleve a cabo una auditoría informática que realice un 
+            control de los sistemas de forma periódica. <br> <br>
+            Esta auditoria informática consiste en el examen completo y constructivo de la unidad de informática de una 
+            organización que se encarga de los aspectos de planeación, organización, operación, control, uso de recursos, 
+            etc; con el fin de descubrir deficiencias e irregularidades proporcionando las recomendaciones necesarias para 
+            mejorar sus operaciones.
+        </p>
+        <h3>Tipos de auditorias informáticas aplicables</h3>
+        <p>Entre las auditorias que se pueden aplicar a las unidades informáticas en una empresa se encuentran:</p>
+        <ul>
+            <li>Auditoria a ciclo de vida de un Software</li>
+            <li>Auditoria a un sistema en operación</li>
+            <li>Auditoria a controles generales</li>
+            <li>Auditoria a la administración de la función informática</li>
+            <li>Auditoria a microcomputadoras aisladas</li>
+            <li>Auditoria a redes</li>
+        </ul>
+        <button onclick="cambio2()" class="avanzar"><a href="#caracteristicas" id="btn_principal2"><i class="fas fa-angle-down fa-2x" style="color: olive;"></i></a></button>
+    </article>
+    <!--Caracteristicas-->
+    <aside id="caracteristicas" class="panel contenido3">
+        <img src="https://cdn.dribbble.com/users/13754/screenshots/6617179/presentation-4_2x.png" alt="">
+        <h2>Proceso de Auditoria</h2>
+        <p>El proceso de la auditoria consta de 3 fases que son:</p>
+        <ol>
+            <li>
+                <strong>Fase Preliminar o de Contratación:</strong> es la etapa donde el auditor senior se encarga de analizar el alcance y
+                limitaciones que pueda tener para considerar si desea o no aceptar el trabajo. Si el auditor acepta el trabajo debe formalizar
+                el acuerdo mediante una <strong><i>&#8220;Carta de Encargo &#8221;</i></strong> ; en la cual se establece la duración y alcance,
+                responsabilidades y limitaciones del acuerdo, responsabilidades y manifestaciones, honorarios y facturas, entre otros datos de 
+                interes.
+            </li>
+            <br>
+            <li>
+                <strong>Fase de Planificación:</strong> es la fase más importante del proceso de auditoria ya que en esta se deben preveer los 
+                pasos a seguir para desarrollarla. Dentro de estos pasos se deben tener en cuenta los principios de <strong><i>&#8220;Presición &#8221;</i></strong> 
+                en el cual las acciones previstas deben de estar planteadas correctamente, <strong><i>&#8220;Flexibilidad&#8221;</i></strong>  en la que el 
+                auditor debe estar preparado ante imprevistos y <strong><i>&#8220;Unidad&#8221;</i></strong>  donde las acciones que se realicen deben 
+                ser precisas y coordinadas. Ademas de tener conocimientos sobre la entidad auditada y los procedimientos que se llevan a cabo dentro de 
+                la misma.
+            </li>
+            <br>
+            <li>
+                <strong>Fase de Ejecución:</strong> en esta fase se llevan a cabo lo que se planteó en las fases anteriores con el fin de obtener resultados.
+            </li>
+            <br>
+        </ol>
+        <button onclick="cambio3()" class="avanzar"><a href="#perfil" id="btn_principal3"><i class="fas fa-angle-down fa-2x" style="color: olive;"></i></a></button>
+    </aside>
+    <!--Perfil Auditor-->
+    <article id="perfil" class="panel contenido4">
+        <img src="https://image.freepik.com/free-vector/businessman-presentation-business-concept-cartoon-illustration_9026-71.jpg" alt="">
+        <h2>Perfil del Auditor Informatico</h2>
+        <p>Es nescesario que el auditor debe poseea las siguientes habilidades dentro de las competencias sociales:</p>
+        <ul>
+            <li>
+                Competencias Sociales:
+                <ul>
+                    <li>
+                        <strong><i>Trabajo en equipo:</i></strong>capacidad para desempeñar su oficio dentro de un equipo de trabajo, 
+                        con responsabilidad y cooperación
+                    </li>
+                    <li>
+                        <strong><i>Comunicación:</i></strong>: capacidad de informar, recibir información y transmitir una idea claramente, 
+                        tanto a nivel escrito como verbal.
+                    </li>
+                    <li>
+                        <strong><i>Resoluación de problemas:</i></strong>análisis y toma de decisiones en situaciones no resueltas
+                        Competencias de apoyo al crecimiento.                
+                    </li>
+                    <li>
+                        <strong><i>Análisis:</i></strong>capacidad de ver diferentes partes o aspectos de una misma información.
+                    </li>
+                    <li>
+                        <strong><i>Inteligencia Emocional:</i></strong>capacidad de llegar a una conclusión tras análisis de una serie de datos.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Competencias Personales:
+                <ul>
+                    <li>
+                        <strong><i>Integridad:</i></strong> aptitudes para controlar las emociones dentro de las relaciones sociales. Auto control.
+                    </li>
+                    <li>
+                        <strong><i>Motivación:</i></strong> coherencia en las actitudes e ideas transmitidas.
+                    </li>
+                    <li>
+                        <strong><i>Idiomas:</i></strong> de preferencia dominio del idioma ingles tanto escrito como verbal.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <br>
+        <button onclick="cambio4()" class="avanzar"><a href="#clase" id="btn_principal4"><i class="fas fa-angle-down fa-2x" style="color: olive;"></i></a></button>
+    </article>
+    <!--Info Clase-->
+    <footer id="clase" class="panel contacto">
+        <h2>Universidad Nacional de Ingeniería</h2>
+        <h3>Facultad de Ciencias y Sistemas</h3>
+        <h3>Ingeniería de Sistemas</h3>
+        <img src="https://www.uni.edu.ni/assets/images/logouni12.png" alt="">
+        <h2>Síguenos aquí</h2>
+        <ul>
+            <li><a href="https://www.uni.edu.ni/#"><i class="fas fa-university fa-2x"></i></a></li>
+            <li><a href="http://www.fcys.uni.edu.ni"><i class="fas fa-user-tie fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/UniversidadNacionaldeIngenieriaNicaragua"><i class="fab fa-facebook fa-2x"></i></a></li>
+        </ul>
+        <p>Web Diseñada en la asignatura Auditoria de Sistemas © 2020 Universidad Nacional de Ingeniería - Facultad de Ciencias y Sistemas</p>
+        <p>Estudiante: Veronica Paola Arroliga Garcia</p>
+        <p>Docente: Msc. Ing. Evelyn del Carmen Espinoza Aragón.</p>
+        <p>Grupo: 5T1-IS</p>
+
+        <button class="volver" onclick="cambio5()"><a href="#inicio" id="btn_principal5"><i class="fas fa-angle-up fa-2x" style="color: olive;"></i></a></button>
+    </footer>
+</body>
+<script>
+    document.getElementById("link-inicio").style.color = "whitesmoke";
+    document.getElementById("link-inicio").style.backgroundColor = "gray";
+    var cont=1;
+    var pag;
+    var sum;
+
+    document.addEventListener('keyup', event => {
+      if (event.keyCode === 40) {
+          if(cont==6){
+              cont=1;
+          }
+           pag = "btn_principal" + cont;
+           document.getElementById(pag).click();
+            cont++;
+      }
+    }, false)
+
+    document.addEventListener('keyup', event => {
+      if (event.keyCode === 38) {
+           sum = cont - 2;
+           if(sum==0){
+               sum=5
+           }
+           if(sum==4){
+                sum=1;
+            }
+            pag = "btn_principal" + sum;
+            document.getElementById(pag).click();
+            cont++;
+            if(sum==5){
+                cont=1;
+            }
+      }
+    }, false)
+
+    function cambiar(elemento) {
+
+        document.getElementById("link-inicio").style.color = "gray";
+        document.getElementById("link-inicio").style.backgroundColor = "transparent";
+        document.getElementById("link-caracteristicas").style.color = "gray";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "transparent";
+        document.getElementById("link-info").style.color = "gray";
+        document.getElementById("link-info").style.backgroundColor = "transparent";
+        document.getElementById("link-perfil").style.color = "gray";
+        document.getElementById("link-perfil").style.backgroundColor = "transparent";
+        document.getElementById("link-clase").style.color = "gray";
+        document.getElementById("link-clase").style.backgroundColor = "transparent";
+
+        elemento.style.backgroundColor = "gray";
+        elemento.style.color = "whitesmoke";
+
+        if(elemento.id == "link-inicio"){
+            cont=1;
+        }else{
+            if(elemento.id == "link-info"){
+                cont=2;
+            }else{
+                if(elemento.id == "link-caracteristicas"){
+                    cont=3;
+                }else{
+                    if(elemento.id == "link-perfil"){
+                        cont=4;
+                    }else{
+                        if(elemento.id == "link-clase"){
+                            cont=5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function cambio1() {
+        document.getElementById("link-inicio").style.color = "gray";
+        document.getElementById("link-inicio").style.backgroundColor = "transparent";
+        document.getElementById("link-caracteristicas").style.color = "gray";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "transparent";
+        document.getElementById("link-info").style.color = "whitesmoke";
+        document.getElementById("link-info").style.backgroundColor = "gray";
+        document.getElementById("link-perfil").style.color = "gray";
+        document.getElementById("link-perfil").style.backgroundColor = "transparent";
+        document.getElementById("link-clase").style.color = "gray";
+        document.getElementById("link-clase").style.backgroundColor = "transparent";
+        cont=1;
+    }
+
+    function cambio2() {
+        document.getElementById("link-inicio").style.color = "gray";
+        document.getElementById("link-inicio").style.backgroundColor = "transparent";
+        document.getElementById("link-caracteristicas").style.color = "whitesmoke";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "gray";
+        document.getElementById("link-info").style.color = "gray";
+        document.getElementById("link-info").style.backgroundColor = "transparent";
+        document.getElementById("link-perfil").style.color = "gray";
+        document.getElementById("link-perfil").style.backgroundColor = "transparent";
+        document.getElementById("link-clase").style.color = "gray";
+        document.getElementById("link-clase").style.backgroundColor = "transparent";
+        cont=2;
+    }
+
+    function cambio3() {
+        document.getElementById("link-inicio").style.color = "gray";
+        document.getElementById("link-inicio").style.backgroundColor = "transparent";
+        document.getElementById("link-caracteristicas").style.color = "gray";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "transparent";
+        document.getElementById("link-info").style.color = "gray";
+        document.getElementById("link-info").style.backgroundColor = "transparent";
+        document.getElementById("link-perfil").style.color = "whitesmoke";
+        document.getElementById("link-perfil").style.backgroundColor = "gray";
+        document.getElementById("link-clase").style.color = "gray";
+        document.getElementById("link-clase").style.backgroundColor = "transparent";
+        cont=3;
+    }
+
+    function cambio4() {
+        document.getElementById("link-inicio").style.color = "gray";
+        document.getElementById("link-inicio").style.backgroundColor = "transparent";
+        document.getElementById("link-caracteristicas").style.color = "gray";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "transparent";
+        document.getElementById("link-info").style.color = "gray";
+        document.getElementById("link-info").style.backgroundColor = "transparent";
+        document.getElementById("link-perfil").style.color = "gray";
+        document.getElementById("link-perfil").style.backgroundColor = "transparent";
+        document.getElementById("link-clase").style.color = "whitesmoke";
+        document.getElementById("link-clase").style.backgroundColor = "gray";
+        cont=4;
+    }
+
+    function cambio5() {
+        document.getElementById("link-inicio").style.color = "whitesmoke";
+        document.getElementById("link-inicio").style.backgroundColor = "gray";
+        document.getElementById("link-caracteristicas").style.color = "gray";
+        document.getElementById("link-caracteristicas").style.backgroundColor = "transparent";
+        document.getElementById("link-info").style.color = "gray";
+        document.getElementById("link-info").style.backgroundColor = "transparent";
+        document.getElementById("link-perfil").style.color = "gray";
+        document.getElementById("link-perfil").style.backgroundColor = "transparent";
+        document.getElementById("link-clase").style.color = "gray";
+        document.getElementById("link-clase").style.backgroundColor = "transparent";
+        cont=5;
+    }
+</script>
+</html>
