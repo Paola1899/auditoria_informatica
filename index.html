@@ -16,41 +16,73 @@
             padding: 0;
         }
 
-        .menubar ul {
-            list-style-type: none;
-            overflow: auto;
-            background-color: transparent;
-            margin-right: 5%;
-        }
-        
-        .menubar li {
-            float: right;
-            width: 140px;
-            height: 40px;
-            vertical-align: middle;
-        }
+        @media screen and (min-width: 790px){
+            .menubar ul {
+                list-style-type: none;
+                overflow: auto;
+                background-color: transparent;
+                margin-right: 5%;
+            }
+            
+            .menubar li {
+                float: right;
+                width: 140px;
+                height: 40px;
+                vertical-align: middle;
+            }
 
-        .menubar li a {
-            display: block;
-            color: gray;
-            text-align: center;
-            padding: 3px 3px;
-            text-decoration: none;
-            border-radius: 50px;
-        }
+            .menubar li a {
+                display: block;
+                color: gray;
+                text-align: center;
+                padding: 3px 3px;
+                text-decoration: none;
+                border-radius: 50px;
+            }
 
-        .menubar a:hover {
-            background-color: gray;
-            color: whitesmoke;
-        }
+            .menubar a:hover {
+                background-color: gray;
+                color: whitesmoke;
+            }
 
+            /*Desplazamiento*/
+            .panel{
+                min-width: 100%;
+                height: 90.6%;
+                display: block;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+                margin-top: -180%;
+                position: absolute;
+                box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
+                z-index: 2;
+                -webkit-transition: all .8s ease-in-out;
+                -moz-transition: all .8s ease-in-out;
+                -o-transition: all .8s ease-in-out;
+                transition: all .8s ease-in-out;
+            }
+
+            .panel:target{
+                margin-top: -1%;
+            }
+
+            .menu-btn {
+                visibility: hidden;
+            }
+
+            .menu-icon {
+                visibility: hidden;
+            }
+
+        }
         .contenido h1 {
             position: relative;
             color: black;
-            text-align: center;
             font-size: 350%;
+            margin-left: 1%;
             font-family: 'Play', sans-serif;
-            margin-left: -50%;
+            
         }
 
         .contenido img {
@@ -90,27 +122,6 @@
         .contenido button a {
             color: whitesmoke;
             text-decoration: none;
-        }
-
-        /*Desplazamiento*/
-        .panel{
-            min-width: 100%;
-            height: 90.6%;
-            display: block;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            margin-top: -180%;
-            position: absolute;
-            box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
-            z-index: 2;
-            -webkit-transition: all .8s ease-in-out;
-            -moz-transition: all .8s ease-in-out;
-            -o-transition: all .8s ease-in-out;
-            transition: all .8s ease-in-out;
-        }
-        .panel:target{
-            margin-top: -1%;
         }
 
         /*Contacto*/
@@ -258,12 +269,152 @@
             .contenido4 p{
                 margin-right: 0.5%;
             }
+
+            button{
+                visibility: hidden;
+            }
+
+            :root {
+            --background-navbar: rgba(55, 55, 55, 0.98);
+            }
+
+            .header {
+                background: black;
+                position: fixed;
+                width: 100%;
+                height: 52px;
+            }
+            /* Nav items */
+            .menu {
+            list-style: none;
+            position: fixed;
+            width: 100%;
+            height: auto;
+            top: 0;
+            margin-top: 52px;
+            padding: 0 0 10px 0;
+            clear: both;
+            background: black;
+            color: whitesmoke;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+            transform: scale(1, 0);
+            transform-origin: top;
+            }
+
+            /* Hamburger menu button */
+            .menu-btn:checked ~ .menu {
+            transform: scale(1, 1);
+            transform-origin: top;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+            }
+
+            /* Hamburger menbu text */
+            .menu a {
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ddd;
+            opacity: 0;
+            transition: 0.5s;
+            }
+
+            .menu a:hover {
+                background-color: gray;
+                color: whitesmoke;
+            }
+
+            .menu li {
+            border-top: 1px solid rgb(75, 75, 75);
+            padding: 15px 0;
+            margin: 0 54px;
+            opacity: 0;
+            transition: 0.5s;
+            }
+
+            .menu-btn:checked ~ .menu a,
+            .menu-btn:checked ~ .menu li {
+            opacity: 1;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+            }
+
+            .menu-btn {
+            display: none;
+            position: fixed;
+            }
+
+            .menu-icon {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            padding: 24px 14px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            position: fixed;
+            }
+
+            .navicon {
+            background: #ddd;
+            display: block;
+            height: 3px;
+            width: 26px;
+            position: relative;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+            }
+
+            .navicon:before,
+            .navicon:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: #ddd;
+            transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+            }
+
+            .navicon:before {
+            top: 9px;
+            }
+
+            .navicon:after {
+            bottom: 9px;
+            }
+
+            /* Hamburger Menu Animation Start */
+            .menu-btn:checked ~ .menu-icon .navicon:before {
+            transform: rotate(-45deg);
+            }
+
+            .menu-btn:checked ~ .menu-icon .navicon:after {
+            transform: rotate(45deg);
+            }
+
+            .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+            top: 0;
+            }
+            .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+            bottom: 0;
+            }
+
+            .menu-btn:checked ~ .menu-icon .navicon {
+            background: rgba(0, 0, 0, 0);
+            transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+            }
+            /* Hamburger Menu Animation End */
+
+            .contenido h1 {
+                font-size: 160%;
+                margin-left: 10%;
+            }
         }
     </style>
 </head>
 <body onload="carga()">
     <nav id="header" class="menubar">
-        <ul>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+        <ul class="menu">
             <li><a id="link-clase" href="#clase" onclick="cambiar(this)">Información Autor</a></li>
             <li><a id="link-perfil" href="#perfil" onclick="cambiar(this)">Perfil Auditor</a></li>
             <li><a id="link-caracteristicas" href="#caracteristicas" onclick="cambiar(this)">Fases</a></li>
